@@ -1,24 +1,27 @@
-import logo from './logo.svg';
+
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Pokedex from './components/Pokedex';
+import ProtectedRoutes from './components/ProtectedRoutes';
+import UserInput from './components/UserInput';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HashRouter>
+      <div className='App'>
+        <Routes>
+          //Login Route
+          <Route path='/' element={<UserInput/>}></Route>
+
+          //ProtectedRoutes
+          <Route element={<ProtectedRoutes/>}>
+            <Route path='/pokedex' element={<Pokedex/>}/>
+            
+          </Route>
+
+        </Routes>
+      </div>
+    </HashRouter>
   );
 }
 
