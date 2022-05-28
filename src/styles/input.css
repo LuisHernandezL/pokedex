@@ -45,7 +45,6 @@
     font-weight: 700;
 }
 .bars-container{
-    outline: 2px solid blue;
     height: 100px;
     width: 100%;
     position: absolute;
@@ -72,7 +71,7 @@
     border: 6px solid black;
 }
 .pokeball2{
-    background: #212121;
+    background: #474747;
     border-radius: 50%;
     width: 70%;
     height: 70%;

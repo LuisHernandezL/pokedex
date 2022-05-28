@@ -3,6 +3,9 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import Pagination from './Pagination';
 import PokemonCard from './PokemonCard';
+import '../styles/pokedex.css'
+import logo from '../styles/images/pokedexLogo.png'
+import NavBar from './NavBar';
 
 const Pokedex = () => {
     const userName = useSelector(state=>state.userName)
@@ -27,20 +30,25 @@ const Pokedex = () => {
     const paginate=(pageNumber)=>{setCurrentPage(pageNumber)}
     return (
         <div className='pokedex-container'>
-            <h2 className='pokedex-title'>Pokedex</h2>
-            <p>Bienvenido <b>{userName}</b>, aqui podras encontrar tu pokemon favorito!</p>
-            <div className='card-container'>
-                <ul>
-                    {
-                        currentPost.map(pokemon=>(
-                            //se puede poner pokemon.url en pokemon
-                            <li key={pokemon.name}><PokemonCard pokemon={pokemon.url}/></li>
-                        ))
-                    }
-                    <Pagination postPerPage={postPerPage} totalPost={pokemons.length} paginate={paginate} currentPage={currentPage}/>
-                </ul>
+            <NavBar/>
+            <div className="info-container">
+                
+                <p>Bienvenido <b>{userName}</b>, aqui podras encontrar tu pokemon favorito!</p>
+                <div className='card-container'>
+                    <ul>
+                        {
+                            currentPost.map(pokemon=>(
+                                //se puede poner pokemon.url en pokemon
+                                <li key={pokemon.name}><PokemonCard pokemon={pokemon.url}/></li>
+                            ))
+                        }
+                        <Pagination postPerPage={postPerPage} totalPost={pokemons.length} paginate={paginate} currentPage={currentPage}/>
+                    </ul>
+
+                </div>
 
             </div>
+            
 
             
         </div>
