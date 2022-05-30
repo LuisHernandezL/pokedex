@@ -31,11 +31,16 @@ const Pokedex = () => {
     return (
         <div className='pokedex-container'>
             <NavBar/>
+            
+            <p className='wellcome-text'><b>Bienvenido! {userName}</b>, aqui podras encontrar tu pokemon favorito!</p>
+            
+            <form>
+                <input type="text"/>
+            </form>
+
             <div className="info-container">
-                
-                <p>Bienvenido <b>{userName}</b>, aqui podras encontrar tu pokemon favorito!</p>
                 <div className='card-container'>
-                    <ul>
+                    <ul className='list-container'>
                         {
                             currentPost.map(pokemon=>(
                                 //se puede poner pokemon.url en pokemon

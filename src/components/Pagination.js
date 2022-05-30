@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/pagination.css'
 
 const Pagination = ({postPerPage,totalPost,paginate,currentPage}) => {
     const PageNumbers=[];
@@ -14,7 +15,7 @@ const Pagination = ({postPerPage,totalPost,paginate,currentPage}) => {
     }
   
     return (
-        <div>
+        <div className='pagination-container'>
             <ul className="pagination">
                 {
                     PageNumbers.map(number=>(
