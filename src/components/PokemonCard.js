@@ -11,8 +11,9 @@ const PokemonCard = ({pokemon,loading}) => {
     useEffect(()=>{
         axios.get(pokemon)
         .then(res=>setPokemonInfo(res.data))
-    },[])
+    },[pokemon])
 
+   
     const navigate = useNavigate()
     
     const goDetail = (id) => {

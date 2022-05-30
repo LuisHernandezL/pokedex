@@ -13,9 +13,9 @@ const PokemonDetail = () => {
     useEffect(() => {
         axios.get(`https://pokeapi.co/api/v2/pokemon/${id}/`)
         .then(res => setPokemon(res.data))
-    }, [])
+    }, [id])
 
-    console.log(pokemon);
+
 
     return (
         <div>
@@ -55,8 +55,8 @@ const PokemonDetail = () => {
                     <div className='types-container'>
                         <div>Tipo</div>
                         <ul>
-                            <li>{pokemon.types?.[0].type.name}</li>
-                            <li>{pokemon.types?.[1].type.name}</li>
+                            <li>{pokemon.types?.[0]?.type.name}</li>
+                            <li>{pokemon.types?.[1]?.type.name}</li>
                         </ul>
                     </div>
 
@@ -113,8 +113,11 @@ const PokemonDetail = () => {
                             <p>{pokemon.stats?.[5].base_stat}/150</p>
                         </div>
                         <div className='base-progress-bar'>
-                            <div>
-
+                            <div className='progress-bar-done' style={{
+                                opacity:1,
+                                width:`${pokemon.stats?.[5].base_stat}`
+                            }}>
+                                {pokemon.stats?.[5].base_stat}%
                             </div>
 
                         </div>

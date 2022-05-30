@@ -13,10 +13,10 @@ function App() {
       <div className='App'>
         
         <Routes>
-          //Login Route
+          
           <Route path='/' element={<UserInput/>}></Route>
           
-          //ProtectedRoutes
+          
           <Route element={<ProtectedRoutes/>}>
             
             <Route path='/pokedex' element={<Pokedex/>}/>
