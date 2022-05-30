@@ -78,7 +78,7 @@ const PokemonDetail = () => {
                             <p>{pokemon.stats?.[0].base_stat}/150</p>
                         </div>
                         <div className='base-progress-bar'>
-                            <div>
+                            <div className='progress-bar-done' style={{width:`${pokemon.stats?.[0].base_stat}%`}}>
 
                             </div>
 
@@ -90,7 +90,7 @@ const PokemonDetail = () => {
                             <p>{pokemon.stats?.[1].base_stat}/150</p>
                         </div>
                         <div className='base-progress-bar'>
-                            <div>
+                            <div className='progress-bar-done' style={{width:`${pokemon.stats?.[1].base_stat}%`}}>
 
                             </div>
 
@@ -102,7 +102,7 @@ const PokemonDetail = () => {
                             <p>{pokemon.stats?.[2].base_stat}/150</p>
                         </div>
                         <div className='base-progress-bar'>
-                            <div>
+                            <div className='progress-bar-done' style={{width:`${pokemon.stats?.[2].base_stat}%`}}>
 
                             </div>
                         </div>
@@ -113,11 +113,8 @@ const PokemonDetail = () => {
                             <p>{pokemon.stats?.[5].base_stat}/150</p>
                         </div>
                         <div className='base-progress-bar'>
-                            <div className='progress-bar-done' style={{
-                                opacity:1,
-                                width:`${pokemon.stats?.[5].base_stat}`
-                            }}>
-                                {pokemon.stats?.[5].base_stat}%
+                            <div className='progress-bar-done' style={{width:`${pokemon.stats?.[5].base_stat}%`}}>
+                                
                             </div>
 
                         </div>
@@ -126,9 +123,19 @@ const PokemonDetail = () => {
             </div>
             <div className='movements-container-detail'>
                 <div>
-                    <h4>Movements</h4>
+                    <div className='title-movements'>
+                        <div>
+                            <h4>Movements</h4>
+                        </div>
+                        <div className='vector-title-movements'>
+
+                        </div>
+                        <div>
+
+                        </div>
+                    </div>
                     <div>
-                        <ul>
+                        <ul className='list-movements'>
                             { pokemon.moves?.map(move => (
                                 <li key={move.move.name}>{move.move.name}</li>
                             ))}

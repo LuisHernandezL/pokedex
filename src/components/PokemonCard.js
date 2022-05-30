@@ -1,7 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/pokemonCard.css'
+import '../styles/pokemonCard.css';
+import colors from '../colors.json'
 
 const PokemonCard = ({pokemon,loading}) => {
     /*  if(loading){
@@ -20,7 +21,18 @@ const PokemonCard = ({pokemon,loading}) => {
         navigate(`/pokedex/${id}`)
     }
 
+    
+    
+    /* const filterColor = () => {
+        let colorActual = colors.filter(e => {
+            return e.type === pokemonInfo.types?.[0].type.name
+        })
+        return colorActual[0].border
+    }
 
+    console.log(filterColor());*/
+    
+    
     
     return (
         <div onClick={() => goDetail(pokemonInfo.id)} className='pokemon-card-container'>

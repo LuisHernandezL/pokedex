@@ -7,6 +7,7 @@ import '../styles/pokedex.css'
 import logo from '../styles/images/pokedexLogo.png'
 import NavBar from './NavBar';
 import { useNavigate } from 'react-router-dom';
+import pokebola from '../styles/images/pokebola.png'
 
 const Pokedex = () => {
     const userName = useSelector(state=>state.userName)
@@ -84,7 +85,7 @@ const Pokedex = () => {
                     value={pokemonSearch}
                     onChange={e=>setPokemonSearch(e.target.value)}
                 />
-                <button>Buscar</button>
+                <button><img src={pokebola} alt="" /></button>
                 
             </form>
 
