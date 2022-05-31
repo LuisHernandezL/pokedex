@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import Pagination from './Pagination';
 import PokemonCard from './PokemonCard';
 import '../styles/pokedex.css'
-import logo from '../styles/images/pokedexLogo.png'
 import NavBar from './NavBar';
 import { useNavigate } from 'react-router-dom';
 import pokebola from '../styles/images/pokebola.png'
@@ -14,7 +13,7 @@ const Pokedex = () => {
     const [pokemons,setPokemons]=useState([]);
     
     const [currentPage,setCurrentPage]=useState(1);
-    const[postPerPage,setPostPerPage]=useState(20);
+    const[postPerPage/*, setPostPerPage */]=useState(20);
     const [pokemonSearch,setPokemonSearch]=useState("");
     const [pokemonTypes,setPokemonTypes]=useState([]);
 
@@ -84,8 +83,9 @@ const Pokedex = () => {
                     placeholder='buscar pokemon'
                     value={pokemonSearch}
                     onChange={e=>setPokemonSearch(e.target.value)}
+                    className='search-bar'
                 />
-                <button><img src={pokebola} alt="" /></button>
+                <button className='search-bar-button'><img src={pokebola} alt="" /></button>
                 
             </form>
 
@@ -108,7 +108,8 @@ const Pokedex = () => {
                         {
                             currentPost.map(pokemon=>(
                                 
-                                <li key={pokemon.name}><PokemonCard pokemon={pokemon.url !== undefined ? pokemon.url : pokemon.pokemon.url }/></li>
+                                <li key={pokemon.url !== undefined ? pokemon.url : pokemon.pokemon.url }><PokemonCard 
+                                    pokemon={pokemon.url !== undefined ? pokemon.url : pokemon.pokemon.url }/></li>
                             ))
                         }
                         <Pagination postPerPage={postPerPage} totalPost={pokemons.length} paginate={paginate} currentPage={currentPage}/>
