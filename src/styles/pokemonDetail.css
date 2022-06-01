@@ -63,6 +63,9 @@
     background-color: rgb(217, 111, 44);
     width: 100px;
     border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    padding: 2px;
 }
 
 .types-container div {

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import NavBar from './NavBar';
 import '../styles/pokemonDetail.css'
+import colors from '../colors.json'
 
 const PokemonDetail = () => {
 
@@ -13,7 +14,19 @@ const PokemonDetail = () => {
     useEffect(() => {
         axios.get(`https://pokeapi.co/api/v2/pokemon/${id}/`)
         .then(res => setPokemon(res.data))
-    }, [id])
+    }, [id]);
+
+
+
+    const changeColors = () => {
+
+        let actualColor = colors.filter(x => {
+            
+            return x.type === pokemon.types?.[0]?.type.name;
+
+        })
+        return actualColor[0]?.background
+    };
 
 
 
@@ -22,7 +35,7 @@ const PokemonDetail = () => {
             <NavBar />
             <div className='info-container-detail'>
 
-                <div className='image-container-detail'>
+                <div className='image-container-detail' style={{backgroundImage: changeColors()}}>
                     <img src={pokemon.sprites?.other.dream_world.front_default} alt={pokemon.name} />
                 </div>
 
@@ -55,8 +68,8 @@ const PokemonDetail = () => {
                     <div className='types-container'>
                         <div>Tipo</div>
                         <ul>
-                            <li>{pokemon.types?.[0]?.type.name}</li>
-                            <li>{pokemon.types?.[1]?.type.name}</li>
+                            <li style={{backgroundImage: changeColors()}}>{pokemon.types?.[0]?.type.name}</li>
+                            <li style={{backgroundImage: changeColors()}}>{pokemon.types?.[1]?.type.name}</li>
                         </ul>
                     </div>
 
@@ -78,7 +91,8 @@ const PokemonDetail = () => {
                             <p>{pokemon.stats?.[0].base_stat}/150</p>
                         </div>
                         <div className='base-progress-bar'>
-                            <div className='progress-bar-done' style={{width:`${pokemon.stats?.[0].base_stat}%`}}>
+                            <div className='progress-bar-done'
+                             style={{width:`${pokemon.stats?.[0].base_stat}%`, backgroundImage: changeColors()}}>
 
                             </div>
 
@@ -90,7 +104,7 @@ const PokemonDetail = () => {
                             <p>{pokemon.stats?.[1].base_stat}/150</p>
                         </div>
                         <div className='base-progress-bar'>
-                            <div className='progress-bar-done' style={{width:`${pokemon.stats?.[1].base_stat}%`}}>
+                            <div className='progress-bar-done' style={{width:`${pokemon.stats?.[1].base_stat}%`, backgroundImage: changeColors()}}>
 
                             </div>
 
@@ -102,7 +116,7 @@ const PokemonDetail = () => {
                             <p>{pokemon.stats?.[2].base_stat}/150</p>
                         </div>
                         <div className='base-progress-bar'>
-                            <div className='progress-bar-done' style={{width:`${pokemon.stats?.[2].base_stat}%`}}>
+                            <div className='progress-bar-done' style={{width:`${pokemon.stats?.[2].base_stat}%`, backgroundImage: changeColors()}}>
 
                             </div>
                         </div>
@@ -113,7 +127,7 @@ const PokemonDetail = () => {
                             <p>{pokemon.stats?.[5].base_stat}/150</p>
                         </div>
                         <div className='base-progress-bar'>
-                            <div className='progress-bar-done' style={{width:`${pokemon.stats?.[5].base_stat}%`}}>
+                            <div className='progress-bar-done' style={{width:`${pokemon.stats?.[5].base_stat > 100 ? 100 : pokemon.stats?.[5].base_stat}%`, backgroundImage: changeColors()}}>
                                 
                             </div>
 

@@ -46,3 +46,25 @@
     top: 25px;
     left: 7px;
 }
+
+
+@media (min-width: 769px){
+    
+    .nav-pokeball{
+        width: 80px;
+        height: 80px;
+        bottom: -20px;
+        right: 10%;
+    }
+    .nav-pokeball2{
+        bottom: 16%;
+        right: 9.5px;
+    }
+
+    
+    
+}
+
+@media (min-width: 1025px){
+
+}
