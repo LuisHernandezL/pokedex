@@ -47,6 +47,10 @@
     left: 7px;
 }
 
+.nav-login_logo_img {
+    cursor: pointer;
+}
+
 
 @media (min-width: 769px){
     

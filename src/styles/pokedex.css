@@ -98,6 +98,11 @@ ul {
       font-size: 1.2rem;
    }
 
+   .filter-selector select {
+      width: 150px;
+      height: 30px;
+   }
+
 }
 
 /* ------------------------------------------------------------- */
@@ -118,6 +123,8 @@ ul {
    .wellcome-text {
       font-size: 1.3rem;
    }
+
+   
 
 }
 

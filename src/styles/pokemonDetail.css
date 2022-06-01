@@ -145,3 +145,24 @@
     border-radius: 20px;
     
 }
+
+@media (min-width: 769px){
+
+    .detail-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .info-container-detail {
+        margin-top: 10%;
+        max-width: 60%;
+        justify-content: center;
+    }
+
+    .movements-container-detail {
+        max-width: 60%;
+    }
+
+    
+}
+
