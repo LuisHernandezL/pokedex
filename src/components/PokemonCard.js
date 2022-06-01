@@ -28,12 +28,12 @@ const PokemonCard = ({pokemon}) => {
         return colorActual[0]?.border
     };
 
- const filterBackGroud = ()=>{
+    const filterBackGroud = ()=>{
      let backActual = colors.filter(e=>{
         return e.type === pokemonInfo.types?.[0].type.name
      });
      return backActual[0]?.background
- };
+    };
 
 
     
