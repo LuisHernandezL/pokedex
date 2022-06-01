@@ -63,6 +63,9 @@
     background-color: rgb(217, 111, 44);
     width: 100px;
     border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    padding: 2px;
 }
 
 .types-container div {
@@ -142,3 +145,24 @@
     border-radius: 20px;
     
 }
+
+@media (min-width: 769px){
+
+    .detail-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .info-container-detail {
+        margin-top: 10%;
+        max-width: 60%;
+        justify-content: center;
+    }
+
+    .movements-container-detail {
+        max-width: 60%;
+    }
+
+    
+}
+

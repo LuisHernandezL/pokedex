@@ -6,10 +6,13 @@
 
 .info-container{
    padding: 5% 10%;
+   list-style: none;
+   
 }
 
 .list-container li { 
    margin-top: 30px;
+   margin-top: 3rem;
 }
 
 ul {
@@ -29,7 +32,7 @@ ul {
 .search-box {
    margin-top: 20px;
    text-align: center;
-   
+   position: relative;
 
 }
 
@@ -37,27 +40,92 @@ ul {
    height: 30px;
    border-radius: 8px;
    width: 45%;
+   position: relative;
 }
 
 .search-box button {
+   cursor: pointer;
+   position: absolute;
    margin-left: 5px;
-   margin-top: 5px;
-   
+   top: 5px;
    background-color: transparent;
    border: none;
-   ;
 }
 
 .search-box button img {
-   padding: 1px;
    width: 20px;
-   padding-top: 25px;
 }
 
 .filter-selector {
    text-align: center;
    margin-top: 10px;
    
+}
+
+/* ------------------------------------------------------------------ */
+
+@media (min-width: 769px){
+   
+   .wellcome-text {
+      margin-top: 20%;
+      text-align: center;
+   }
+
+
+   .info-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 3rem;
+      list-style: none;
+   }
+
+
+   .list-container li { 
+      margin-top: 10px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+   }
+
+
+   .wellcome-text b {
+      font-size: 1.3rem;
+   }
+
+   .wellcome-text {
+      font-size: 1.2rem;
+   }
+
+   .filter-selector select {
+      width: 150px;
+      height: 30px;
+   }
+
+}
+
+/* ------------------------------------------------------------- */
+
+@media (min-width: 1025px){
+   
+   .wellcome-text {
+      margin-top: 10%;
+      text-align: center;
+   }
+
+
+
+   .wellcome-text b {
+      font-size: 1.4rem;
+   }
+
+   .wellcome-text {
+      font-size: 1.3rem;
+   }
+
+   
+
 }
 
 

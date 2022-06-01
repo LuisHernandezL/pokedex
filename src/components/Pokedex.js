@@ -6,7 +6,7 @@ import PokemonCard from './PokemonCard';
 import '../styles/pokedex.css'
 import NavBar from './NavBar';
 import { useNavigate } from 'react-router-dom';
-import pokebola from '../styles/images/pokebola.png'
+import pokebola from '../styles/images/pokeball.png'
 
 const Pokedex = () => {
     const userName = useSelector(state=>state.userName)
@@ -57,8 +57,11 @@ const Pokedex = () => {
             axios.get('https://pokeapi.co/api/v2/pokemon?offset=0&limit=1126')
                 .then(r=>{
                 setPokemons(r.data.results);
+                
             });
-        }; 
+
+        };
+        
     };
 
     
@@ -100,24 +103,20 @@ const Pokedex = () => {
             </div>
 
             <div className="info-container">
-                <div className='card-container'>
-                    <ul className='list-container'>
-                        {
-                            currentPost.map(pokemon=>(
+                {
+                    currentPost.map(pokemon=>(
                                 
-                                <li key={pokemon.url !== undefined ? pokemon.url : pokemon.pokemon.url }><PokemonCard 
-                                    pokemon={pokemon.url !== undefined ? pokemon.url : pokemon.pokemon.url }/></li>
-                            ))
-                        }
-                        <Pagination postPerPage={postPerPage} totalPost={pokemons.length} paginate={paginate} currentPage={currentPage}/>
-                    </ul>
-
-                </div>
-
+                        <li key={pokemon.url !== undefined ? pokemon.url : pokemon.pokemon.url }><PokemonCard 
+                                    pokemon={pokemon.url !== undefined ? pokemon.url : pokemon.pokemon.url }/>
+                        </li>
+                    ))
+                }
             </div>
             
-
-            
+            <div>
+                <Pagination postPerPage={postPerPage} totalPost={pokemons.length} paginate={paginate} currentPage={currentPage}/>
+            </div>
+            <br />
         </div>
     );
 };

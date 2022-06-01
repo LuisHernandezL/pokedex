@@ -91,24 +91,21 @@
         height:45px;
         width: 400px;
     }
+
     .bars-container{
         height: 110px;
     }
  
     .pokeball{
-        background: white;
-        border-radius: 50%;
         width: 100px;
         height: 100px;
-        position: absolute;
         bottom: 0;
-        left: 44%;
-        border: 6px solid black;
+        left: 44%; 
     }
+
     .pokeball2{
         bottom: 17%;
         right: 12.8px;
-  
     }
 
 } 
@@ -127,14 +124,10 @@
     }
  
     .pokeball{
-        background: white;
-        border-radius: 50%;
         width: 100px;
         height: 100px;
-        position: absolute;
         bottom: 0;
         left: 47%;
-        border: 6px solid black;
     }
     .pokeball2{
         bottom: 17%;

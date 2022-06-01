@@ -28,12 +28,12 @@ const PokemonCard = ({pokemon}) => {
         return colorActual[0]?.border
     };
 
-    const filterBackGroud = ()=>{
+ const filterBackGroud = ()=>{
      let backActual = colors.filter(e=>{
         return e.type === pokemonInfo.types?.[0].type.name
      });
      return backActual[0]?.background
-    };
+ };
 
 
     
@@ -50,7 +50,14 @@ const PokemonCard = ({pokemon}) => {
                 <div className='stats-container'>
                     <h3>{pokemonInfo.name}</h3>
                     <div className='pokemon-type-container'>
-                        { pokemonInfo.types?.length>1 ? <h4>{pokemonInfo.types?.[0].type.name} / {pokemonInfo.types?.[1]?.type.name}</h4>: <h4>{pokemonInfo.types?.[0].type.name}</h4>}
+                        { pokemonInfo.types?.length>1 ?
+                            <h4>
+                             {pokemonInfo.types?.[0].type.name} / {pokemonInfo.types?.[1]?.type.name}
+                            </h4>
+                            : 
+                            <h4>
+                                {pokemonInfo.types?.[0].type.name}
+                            </h4>}
                         <p>TYPE</p>
                     </div>
                     <div className='stats-container1'>
